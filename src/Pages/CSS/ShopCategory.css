@@ -1,0 +1,40 @@
+.shop-category-banner{
+    display: block;
+    margin: 30px auto;
+    width: 82%;
+}
+
+.shop-category-indexSort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 170px;
+}
+
+.shop-category-sort{
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid #888;
+}
+
+.shop-category-sort p span{
+    font-weight: 600;
+}
+
+.cl{
+    width: 95%;
+}
+
+.shop-category-loadmore{
+    display: flex;
+    align-items: center;
+    margin: 150px auto;
+    justify-content: center;
+    width: 233px;
+    height: 69px;
+    border-radius: 75px;
+    font-size: 18px;
+    font-weight: 500;
+    background: rgb(186, 182, 182);
+    
+}

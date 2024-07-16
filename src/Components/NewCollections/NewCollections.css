@@ -1,0 +1,26 @@
+.new-collections{
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-collections h1{
+    font-size: 50px;
+    font-weight: 600;
+    color: #252525; 
+}
+
+.new-collections hr{
+    width: 200px;
+    height: 6px;
+    background: #252525;
+    border-radius: 10px;
+    color: #252525;
+}
+
+.container{
+    margin: auto;
+    margin: 10px;
+}
