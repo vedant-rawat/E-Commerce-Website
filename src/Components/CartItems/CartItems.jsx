@@ -3,8 +3,26 @@ import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 
+import p1_img from '../Assets/product_1.png' 
+import p2_img from '../Assets/product_2.png' 
+import p3_img from '../Assets/product_3.png' 
+import p4_img from '../Assets/product_4.png' 
+import p5_img from '../Assets/product_5.png' 
+import p6_img from '../Assets/product_6.png' 
+import p7_img from '../Assets/product_7.png' 
+import p8_img from '../Assets/product_8.png' 
+import p9_img from '../Assets/product_9.png' 
+import p10_img from '../Assets/product_10.png' 
+
+
+
 export const CartItems = () => {
     const {all_product, cartItems, removeFromCart, getTotal} = useContext(ShopContext);
+
+    // console.log('All Products:', all_product); // Add this line
+    // console.log('Cart Items:', cartItems); // Add this line
+
+    
   return (
     <div className='cartitems'>
         <div className="cartitems-format-main">

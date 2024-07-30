@@ -23,14 +23,17 @@ const ShopContextProvider = (props)=>{
 
     const [all_product, setAll_Product] = useState([]);
 
-    console.log(all_product);
-    console.log(cartItems);
+    // console.log(all_product);
+    // console.log(cartItems);
 
 
     useEffect(()=>{
         fetch('http://localhost:4000/allproducts')
         .then((response)=>response.json())
-        .then((data)=>setAll_Product(data))
+        .then((data)=>{
+            setAll_Product(data)
+            // console.log(data)
+        })
 
         if(localStorage.getItem('auth-token')){
             fetch('http://localhost:4000/getcart', {
@@ -42,12 +45,16 @@ const ShopContextProvider = (props)=>{
                 },
                 body: "",
             }).then((response)=>response.json())
-            .then((data)=>setCartItems(data));
+            .then((data)=>{
+                setCartItems(data)
+                // console.log(data)
+            });
         }
         else{
             setCartItems(getDefaultCart())
         }
     }, [])      
+
 
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -66,7 +73,7 @@ const ShopContextProvider = (props)=>{
                 body: JSON.stringify({'itemId': itemId})
             })
             .then((response)=>response.json())
-            .then((data)=>console.log(data))
+            // .then((data)=>console.log(data))
         }
     } 
 
@@ -83,9 +90,10 @@ const ShopContextProvider = (props)=>{
                 body: JSON.stringify({'itemId': itemId})
             })
             .then((response)=>response.json())
-            .then((data)=>console.log(data))
+            // .then((data)=>console.log(data))
         }
     }
+
 
     const getTotal = ()=>{
         let totalAmt = 0;
@@ -94,7 +102,8 @@ const ShopContextProvider = (props)=>{
             if(cartItems[item] > 0)
             {
                 let itemInfo = all_product.find((product)=>product.id === Number(item))
-                totalAmt += itemInfo.new_price * cartItems[item]
+                // totalAmt += itemInfo.new_price * cartItems[item]
+                totalAmt += 100 * cartItems[item]
             }
         }
         return totalAmt;
@@ -111,9 +120,9 @@ const ShopContextProvider = (props)=>{
         }
         return total;
     }
-
+    // console.log(all_product)
     const contextValue = {all_product, cartItems, addToCart, removeFromCart, getTotal, getTotalItems};   
-    console.log(cartItems)
+    // console.log(cartItems)
 
     return(
         <ShopContext.Provider value={contextValue}>
